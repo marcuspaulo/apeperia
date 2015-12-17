@@ -3,10 +3,16 @@ $cor-branca: #FFF;
 $raio: 0.3em;
 $raio-grande: 50px;
 
-@mixin borda-arredondada($raio) {
+@mixin borda-arredondada($raio: 10px) {
   -webkit-border-radius: $raio;
   -moz-border-radius: $raio;
   border-radius: $raio;
+}
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
 }
 
 /*@mixin borda-mais-arredondada {
@@ -156,9 +162,7 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   background-position: center;
   margin: 1em 1.5em 0 0;
 }
@@ -243,7 +247,7 @@ header .container {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arredondada($raio);
+  @include borda-arredondada;
   @include sombra-padrao;
   margin-left: 2em;
 }
@@ -327,7 +331,7 @@ textarea {
   width: 100%;
   margin-bottom: .8em;
   padding: 4px 8px;
-  @include borda-arredondada($raio);
+  @include borda-arredondada;
   border: 2px solid #ccc;
 }
 
@@ -339,7 +343,7 @@ textarea {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arredondada($raio);
+  @include borda-arredondada;
   @include sombra-padrao;
 }
 
@@ -420,9 +424,7 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   margin-left: 1em;
 }
 
